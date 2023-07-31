@@ -1,1 +1,20 @@
-<p>list-tareas works!</p>
+<div class="container-fluid mt-5 justify-content-center">
+    <div class="row d-flex justify-content-center">
+      <div class="col-5 justify-content-center">
+        <!-- Lista -->
+        <ul class="list-group">
+          <li 
+         class="list-group-item   d-flex justify-content-between"
+         *ngFor=" 
+            let element of listaT;
+            let i = index;
+            
+         "
+      >
+         <span>{{element.nombre}}: {{element.descripcion}}</span>
+         <button class="btn btn-danger" >X</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>

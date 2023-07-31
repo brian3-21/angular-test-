@@ -19,15 +19,16 @@ export class AddListComponent {
   resetTarea():void{
     this.newTarea.nombre='';
     this.newTarea.descripcion='';
-    this.newTarea.terminada= undefined;
   }
 
   enviarTarea(tarea:Tarea){
-    if( this.newTarea.nombre !=''){
-      console.log(tarea)
-      this.tareaEnviada.emit(tarea);
-      this.resetTarea();
+    if( this.newTarea.nombre ===''){
+      return
     };
+    this.tareaEnviada.emit(tarea);
+
+    this.newTarea = {nombre:'', descripcion: ''}; /* esta linea es la que arreglar el codigo */
+
   }
   
   

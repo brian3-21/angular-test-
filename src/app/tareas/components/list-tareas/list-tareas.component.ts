@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Tarea } from '../../interfaces/tarea.interface';
 
 @Component({
@@ -9,35 +9,15 @@ import { Tarea } from '../../interfaces/tarea.interface';
 export class ListTareasComponent {
 
   @Input()
-  public tareaRecivida :Tarea={
-    nombre:'',
-    descripcion:'',
-  };
-  public listaT:Tarea[]=[
-    {
-      nombre:'Una tarea',
-      descripcion: 'Tarea'
-    },
-    {
-      nombre:'Una tarea',
-      descripcion: 'Tarea'
-    },
-    {
-      nombre:'Una tarea',
-      descripcion: 'Tarea'
-    },
-    {
-      nombre:'Una tarea',
-      descripcion: 'Tarea'
-    }
-  ];
+  public tareasList:Tarea[] = [];
 
-  agregarTarea(tarea:Tarea){
-    this.listaT.push(tarea)
+  @Output()
+  public enviarid:EventEmitter<number> = new EventEmitter();
+
+  idEnviado(numero:number){
+    this.enviarid.emit(numero);
   }
 
-  eliminarTarea(index:number){
-    this.listaT.splice(index,1)
-  }
+
 
 }

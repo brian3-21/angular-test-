@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Tarea } from '../interfaces/tarea.interface';
+import { TareasService } from '../services/tareas.service';
 
 @Component({
   templateUrl: './pages.component.html',
@@ -8,10 +9,7 @@ import { Tarea } from '../interfaces/tarea.interface';
 })
 export class MainPageComponent {
 
-  @Input()
-  public tareaRecivida :Tarea={
-    nombre:'',
-    descripcion:'',
-  };
+  constructor( public tareasService:TareasService) {}
 
+  
 }

@@ -6,17 +6,14 @@
           <li 
          class="list-group-item   d-flex justify-content-between"
          *ngFor=" 
-            let element of listaT;
+            let element of tareasList;
             let i = index;
-            
          "
       >
          <span>{{element.nombre}}: {{element.descripcion}}</span>
-         <button class="btn btn-danger" (click)="eliminarTarea(i)" >X</button>
+         <button class="btn btn-danger" (click)="idEnviado(i)" >X</button>
           </li>
         </ul>
       </div>
     </div>
   </div>
-
-  <button class="btn btn-success" (click)="agregarTarea(tareaRecivida)" >Agregar Tarea</button>

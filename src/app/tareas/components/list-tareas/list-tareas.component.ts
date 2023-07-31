@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Tarea } from '../../interfaces/tarea.interface';
 
 @Component({
@@ -8,6 +8,11 @@ import { Tarea } from '../../interfaces/tarea.interface';
 })
 export class ListTareasComponent {
 
+  @Input()
+  public tareaRecivida :Tarea={
+    nombre:'',
+    descripcion:'',
+  };
   public listaT:Tarea[]=[
     {
       nombre:'Una tarea',
@@ -26,6 +31,10 @@ export class ListTareasComponent {
       descripcion: 'Tarea'
     }
   ];
+
+  agregarTarea(tarea:Tarea){
+    this.listaT.push(tarea)
+  }
 
   eliminarTarea(index:number){
     this.listaT.splice(index,1)

@@ -12,9 +12,11 @@
          "
       >
          <span>{{element.nombre}}: {{element.descripcion}}</span>
-         <button class="btn btn-danger" >X</button>
+         <button class="btn btn-danger" (click)="eliminarTarea(i)" >X</button>
           </li>
         </ul>
       </div>
     </div>
   </div>
+
+  <button class="btn btn-success" (click)="agregarTarea(tareaRecivida)" >Agregar Tarea</button>

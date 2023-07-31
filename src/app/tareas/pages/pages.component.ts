@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Tarea } from '../interfaces/tarea.interface';
 
 @Component({
   templateUrl: './pages.component.html',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   selector:'main-page-component',
 })
 export class MainPageComponent {
+
+  @Input()
+  public tareaRecivida :Tarea={
+    nombre:'',
+    descripcion:'',
+  };
 
 }

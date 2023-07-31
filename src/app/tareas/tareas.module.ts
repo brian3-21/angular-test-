@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AddListComponent } from './components/add-list/add-list.component';
 import { MainPageComponent } from './pages/pages.component';
 import { ListTareasComponent } from './components/list-tareas/list-tareas.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -14,6 +15,7 @@ import { ListTareasComponent } from './components/list-tareas/list-tareas.compon
   ],
   imports: [
     CommonModule,
+    FormsModule,
   ],
   exports:[
     AddListComponent,
